@@ -36,4 +36,5 @@ Imports:
     factoextra (>= 1.0.7),
     topicmodels (>= 0.2.9),
     tm (>= 0.7.7),
-    tidytext (>= 0.2.3)
+    tidytext (>= 0.2.3),
+    glue (>= 1.4.0)
