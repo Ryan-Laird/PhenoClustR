@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.venv/
+internal_data/
+notebooks/
+renv/library/
+renv/python/
+renv/staging/
