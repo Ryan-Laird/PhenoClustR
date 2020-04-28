@@ -38,7 +38,7 @@ Ontology](https://hpo.jax.org/app/),
 R package suite, and [HPO2Vec](https://github.com/shenfc/HPO2Vec) (and
 therefore [Node2Vec](https://github.com/aditya-grover/node2vec)).
 
-Please see [references](references/) for related research.
+Please see [bibliography](bibliography/) for related research.
 
 The initial findings of this work are to be presented during [NIH
 Postbac poster

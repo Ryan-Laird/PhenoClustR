@@ -37,7 +37,7 @@ devtools::install_github("Ryan-Laird/PhenoClustR")
 
 This is an experimental package I've developed in an attempt to better stratify a cohort of patients with undifferentiated autoinflammatory disease. It leans heavily on the [Human Phenotype Ontology](https://hpo.jax.org/app/), [`ontologyX`](https://cran.r-project.org/web/packages/ontologyIndex/vignettes/intro-to-ontologyX.html) R package suite, and [HPO2Vec](https://github.com/shenfc/HPO2Vec) (and therefore [Node2Vec](https://github.com/aditya-grover/node2vec)).
 
-Please see [references](references/) for related research. 
+Please see [bibliography](bibliography/) for related research. 
 
 The initial findings of this work are to be presented during [NIH Postbac poster day, 2020](https://www.training.nih.gov/postbac_poster_day). My [poster](poster/poster.pdf) is available in this repository and was generated with the wonderful R package [`posterdown`](https://github.com/brentthorne/posterdown). 
 
