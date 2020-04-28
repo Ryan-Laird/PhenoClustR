@@ -8,7 +8,6 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "figures/",
   out.width = "100%",
   include = FALSE
 )
@@ -17,11 +16,15 @@ knitr::opts_chunk$set(
 # PhenoClustR
 
 <!-- badges: start -->
-[![lifecycle-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
+![lifecycle-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
 <!-- badges: end -->
 
-```{r, include=TRUE, fig.cap="Leiden clustering by ontology similarity; HDBSCAN Clustering by Average HPO2Vec Embedding Space.", echo=FALSE}
+Unsupervised machine learning approaches for patient stratification/clustering by phenotype. 
+
+```{r, include=TRUE, echo=FALSE}
+
 knitr::include_graphics(here::here("figures", "onto_emb_cluster.png"))
+
 ```
 
 ## Installation
@@ -34,19 +37,14 @@ devtools::install_github("Ryan-Laird/PhenoClustR")
 *Disclaimer:* This is for research purposes only and does not claim to aid diagnostics or medical decision making. If you are working with sensitive data take precaution to protect PII/PHI. Please refer to the [Code of Conduct](CODE_OF_CONDUCT.md) for user/community standards.
 
 
-
--------------------------------------------------------------------
-
-
 ## Introduction
 
 This is an experimental package I've developed in an attempt to better stratify a cohort of patients with undifferentiated autoinflammatory disease. It leans heavily on the [Human Phenotype Ontology](https://hpo.jax.org/app/), [`ontologyX`](https://cran.r-project.org/web/packages/ontologyIndex/vignettes/intro-to-ontologyX.html) R package suite, and [HPO2Vec](https://github.com/shenfc/HPO2Vec) (and therefore [Node2Vec](https://github.com/aditya-grover/node2vec)).
 
 Please see [references](references/) for related research. 
 
-The initial findings of this work are to be presented during [NIH Postbac poster day 2020](https://www.training.nih.gov/postbac_poster_day). My poster is available in [this repository](poster/poster.html), and was generated with the wonderful R package [`posterdown`](https://github.com/brentthorne/posterdown). 
+The initial findings of this work are to be presented during [NIH Postbac poster day, 2020](https://www.training.nih.gov/postbac_poster_day). My poster is available in [this repository](poster/poster.pdf), and was generated with the wonderful R package [`posterdown`](https://github.com/brentthorne/posterdown). 
 
--------------------------------------------------
 
 ## Coming Soon
 

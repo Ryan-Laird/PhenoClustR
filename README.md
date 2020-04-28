@@ -5,21 +5,13 @@
 
 <!-- badges: start -->
 
-\[![lifecycle-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
+![lifecycle-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
 <!-- badges: end -->
 
-<div class="figure">
+Unsupervised machine learning approaches for patient
+stratification/clustering by phenotype.
 
-<img src="C:/Users/lairdrs/Documents/PhenoClustR/figures/onto_emb_cluster.png" alt="Leiden clustering by ontology similarity; HDBSCAN Clustering by Average HPO2Vec Embedding Space." width="100%" />
-
-<p class="caption">
-
-Leiden clustering by ontology similarity; HDBSCAN Clustering by Average
-HPO2Vec Embedding Space.
-
-</p>
-
-</div>
+<img src="C:/Users/lairdrs/Documents/PhenoClustR/figures/onto_emb_cluster.png" width="100%" />
 
 ## Installation
 
@@ -36,8 +28,6 @@ aid diagnostics or medical decision making. If you are working with
 sensitive data take precaution to protect PII/PHI. Please refer to the
 [Code of Conduct](CODE_OF_CONDUCT.md) for user/community standards.
 
------
-
 ## Introduction
 
 This is an experimental package I’ve developed in an attempt to better
@@ -52,12 +42,10 @@ Please see [references](references/) for related research.
 
 The initial findings of this work are to be presented during [NIH
 Postbac poster
-day 2020](https://www.training.nih.gov/postbac_poster_day). My poster is
-available in [this repository](poster/poster.html), and was generated
+day, 2020](https://www.training.nih.gov/postbac_poster_day). My poster
+is available in [this repository](poster/poster.pdf), and was generated
 with the wonderful R package
 [`posterdown`](https://github.com/brentthorne/posterdown).
-
------
 
 ## Coming Soon
 
