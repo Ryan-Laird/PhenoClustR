@@ -10,7 +10,7 @@
 #'
 plot_umap <- function(umap_obj, label_df, interact = TRUE) {
 
-    theme_set(theme_minimal())
+    ggplot2::theme_set(theme_minimal())
 
     dat <- umap_obj$layout %>% as.data.frame() %>% cbind(label_df)
 
@@ -18,15 +18,15 @@ plot_umap <- function(umap_obj, label_df, interact = TRUE) {
 
     conf <- umap_obj$config
 
-    subtitle <- glue_data(conf,
+    subtitle <- glue::glue_data(conf,
                           "n neighbors: {n_neighbors}  |  min dist.: {min_dist}  |  metric: {metric}  |  method: {method}")
 
     p <- dat %>%
 
-        ggplot(aes(V1, V2, text = mrn)) +
-        geom_point(alpha = 0.2) +
+        ggplot2::ggplot(aes(V1, V2, text = mrn)) +
+        ggplot2::geom_point(alpha = 0.2) +
 
-        theme(axis.text = element_blank(),
+        ggplot2::theme(axis.text = element_blank(),
               axis.title = element_blank(),
               panel.grid = element_blank())
 
@@ -34,8 +34,8 @@ plot_umap <- function(umap_obj, label_df, interact = TRUE) {
 
         if (conf$n_components == 2) {
 
-            ggplotly(p, tooltip = "text") %>%
-                layout(title =
+            plotly::ggplotly(p, tooltip = "text") %>%
+                plotly::layout(title =
                            list(text =
                                     paste0(title,
                                            '<br>',
@@ -47,11 +47,11 @@ plot_umap <- function(umap_obj, label_df, interact = TRUE) {
 
         else {
 
-            dat %>% plot_ly(x = ~V1, y = ~V2, z = ~V3,
+            dat %>% plotly::plot_ly(x = ~V1, y = ~V2, z = ~V3,
                             type = "scatter3d", mode = "markers", text = ~mrn,
                             size = 1, alpha = .2) %>%
 
-                layout(title =
+                plotly::layout(title =
                            list(text =
                                     paste0(title,
                                            '<br>',
@@ -63,7 +63,7 @@ plot_umap <- function(umap_obj, label_df, interact = TRUE) {
     }
 
     else {
-        p + labs(title = title, subtitle = subtitle)
+        p + ggplot2::labs(title = title, subtitle = subtitle)
     }
 }
 
@@ -80,22 +80,22 @@ plot_umap <- function(umap_obj, label_df, interact = TRUE) {
 #'
 plot_umap_bulk <-  function(umap_obj, label_df, interact = FALSE) {
 
-    theme_set(theme_minimal())
+    ggplot2::theme_set(theme_minimal())
 
     dat <- label_df
 
     conf <- umap_obj$config
 
-    title <- glue_data(conf,
+    title <- glue::glue_data(conf,
                        "n neighbors: {n_neighbors}  |  min dist.: {min_dist}
                         metric: {metric}  |  method: {method}")
 
     p <- dat %>%
 
-        ggplot(aes(V1, V2, text = mrn)) +
-        geom_point(alpha = 0.2) +
+        ggplot2::ggplot(aes(V1, V2, text = mrn)) +
+        ggplot2::geom_point(alpha = 0.2) +
 
-        theme(axis.text = element_blank(),
+        ggplot2::theme(axis.text = element_blank(),
               axis.title = element_blank(),
               panel.grid = element_blank())
 
@@ -103,13 +103,13 @@ plot_umap_bulk <-  function(umap_obj, label_df, interact = FALSE) {
 
         if (interact == TRUE) {
 
-            ggplotly(p, tooltip = "text") %>%
-                layout(title =
+            plotly::ggplotly(p, tooltip = "text") %>%
+                plotly::layout(title =
                            list(text = title,
                                 x = 0))
         }
         else {
-            p + labs(subtitle = title)
+            p + ggplot2::labs(subtitle = title)
         }
 
     }
@@ -117,11 +117,11 @@ plot_umap_bulk <-  function(umap_obj, label_df, interact = FALSE) {
 
     else {
 
-        dat %>% plot_ly(x = ~V1, y = ~V2, z = ~V3,
+        dat %>% plotly::plot_ly(x = ~V1, y = ~V2, z = ~V3,
                         type = "scatter3d", mode = "markers", text = ~mrn,
                         size = 1, alpha = .2) %>%
 
-            layout(title =
+            plotly::layout(title =
                        list(text = title,
                             x = 0))
     }

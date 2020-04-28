@@ -1,55 +1,74 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-
 
 # PhenoClustR
 
 <!-- badges: start -->
+
+\[![lifecycle-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
 <!-- badges: end -->
 
-The goal of PhenoClustR is to ...
+<div class="figure">
+
+<img src="C:/Users/lairdrs/Documents/PhenoClustR/figures/onto_emb_cluster.png" alt="Leiden clustering by ontology similarity; HDBSCAN Clustering by Average HPO2Vec Embedding Space." width="100%" />
+
+<p class="caption">
+
+Leiden clustering by ontology similarity; HDBSCAN Clustering by Average
+HPO2Vec Embedding Space.
+
+</p>
+
+</div>
 
 ## Installation
 
-You can install the released version of PhenoClustR from [CRAN](https://CRAN.R-project.org) with:
+Although this is largely an exploratory project rather than an actual
+package, one may install the development version of PhenoClustR from
+this repository:
 
 ``` r
-install.packages("PhenoClustR")
+devtools::install_github("Ryan-Laird/PhenoClustR")
 ```
 
-## Example
+*Disclaimer:* This is for research purposes only and does not claim to
+aid diagnostics or medical decision making. If you are working with
+sensitive data take precaution to protect PII/PHI. Please refer to the
+[Code of Conduct](CODE_OF_CONDUCT.md) for user/community standards.
 
-This is a basic example which shows you how to solve a common problem:
+-----
 
+## Introduction
 
-```r
-library(PhenoClustR)
-#> Error in library(PhenoClustR): there is no package called 'PhenoClustR'
-## basic example code
-```
+This is an experimental package I’ve developed in an attempt to better
+stratify a cohort of patients with undifferentiated autoinflammatory
+disease. It leans heavily on the [Human Phenotype
+Ontology](https://hpo.jax.org/app/),
+[`ontologyX`](https://cran.r-project.org/web/packages/ontologyIndex/vignettes/intro-to-ontologyX.html)
+R package suite, and [HPO2Vec](https://github.com/shenfc/HPO2Vec) (and
+therefore [Node2Vec](https://github.com/aditya-grover/node2vec)).
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+Please see [references](references/) for related research.
 
+The initial findings of this work are to be presented during [NIH
+Postbac poster
+day 2020](https://www.training.nih.gov/postbac_poster_day). My poster is
+available in [this repository](poster/poster.html), and was generated
+with the wonderful R package
+[`posterdown`](https://github.com/brentthorne/posterdown).
 
-```r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
+-----
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+## Coming Soon
 
-You can also embed plots, for example:
+For the most part this will remain an exploratory project, however I do
+plan on including additional functionality and resources.
 
-<img src="man/figures/README-pressure-1.png" title="plot of chunk pressure" alt="plot of chunk pressure" width="100%" />
+To do’s include:
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+  - Create synthetic autoinflammatory phenotype data for reproducible
+    examples
+
+  - Provide script for my initial analysis (poster)
+
+  - Provide script for generating an enriched HPO node embedding

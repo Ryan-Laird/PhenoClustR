@@ -1,6 +1,8 @@
+^environment\.yml$
 ^renv$
 ^renv\.lock$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
 ^README\.Rmd$
+^CODE_OF_CONDUCT\.md$

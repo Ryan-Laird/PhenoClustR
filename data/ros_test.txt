@@ -1,0 +1,14 @@
+Denies: General - Denies fever, chills, fatigue, night sweats, weight loss, alopecia
+Skin - Denies new rashes/lesions, Raynaud's
+Eyes - Denies any vision loss, dry eyes, conjunctival erythema
+Ears - Denies ear pain, hearing loss, recurrent ear infections
+Nose - Denies rhinorrhea, nose bleeds, congestion, recurrent sinus infections, nasal ulcers
+Mouth and Throat - Denies oral lesions, oral ulcers, throat pain, tooth pain, difficulty swallowing, thrush, dry mouth
+Chest - Pulmonary - Denies shortness of breath, cough, wheezing, hemoptysis
+Chest - CV - Denies chest pain, palpitations, peripheral edema, orthopnea, hypertension
+GI - Denies anorexia, nausea/vomiting, dysphagia, odynophagia, abdominal pain, diarrhea, bright red blood per rectum,
+melena
+GU - Denies kidney stones, dysuria, urinary frequency, genital lesions/ genital ulcers, pruritus, hematuria
+MS - Denies joint, bone, or muscular pain, morning stiffness
+Endocrine/Metabolic/Repro. Health - Denies polyuria, polyphagia, polydipsia
+Psych - Denies depression, anxiety, visual/auditory disturbances

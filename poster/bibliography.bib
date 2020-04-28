@@ -1,0 +1,119 @@
+@article{bhattacharya2018co,
+  title={Co-occurrence of medical conditions: Exposing patterns through probabilistic topic modeling of snomed codes},
+  author={Bhattacharya, Moumita and Jurkovitz, Claudine and Shatkay, Hagit},
+  journal={Journal of biomedical informatics},
+  volume={82},
+  pages={31--40},
+  year={2018},
+  publisher={Elsevier}
+}
+﻿@Article{pmid30514889,
+   Author="Deisseroth, C. A.  and Birgmeier, J.  and Bodle, E. E.  and Kohler, J. N.  and Matalon, D. R.  and Nazarenko, Y.  and Genetti, C. A.  and Brownstein, C. A.  and Schmitz-Abe, K.  and Schoch, K.  and Cope, H.  and Signer, R.  and Martinez-Agosto, J. A.  and Shashi, V.  and Beggs, A. H.  and Wheeler, M. T.  and Bernstein, J. A.  and Bejerano, G. ",
+   Title="{{C}lin{P}hen extracts and prioritizes patient phenotypes directly from medical records to expedite genetic disease diagnosis}",
+   Journal="Genet. Med.",
+   Year="2019",
+   Volume="21",
+   Number="7",
+   Pages="1585--1593",
+   Month="07"
+}
+@article{diaz2019umap,
+  title={UMAP reveals cryptic population structure and phenotype heterogeneity in large genomic cohorts},
+  author={Diaz-Papkovich, Alex and Anderson-Trocm{\'e}, Luke and Gravel, Simon},
+  journal={PLoS genetics},
+  volume={15},
+  number={11},
+  year={2019},
+  publisher={Public Library of Science}
+}
+@article{li2014discovering,
+  title={Discovering associations among diagnosis groups using topic modeling},
+  author={Li, Ding Cheng and Thermeau, Terry and Chute, Christopher and Liu, Hongfang},
+  journal={AMIA Summits on Translational Science Proceedings},
+  volume={2014},
+  pages={43},
+  year={2014},
+  publisher={American Medical Informatics Association}
+}
+@article{reches2019phenotyping,
+  title={From phenotyping to genotyping-bioinformatics for the busy clinician},
+  author={Reches, A and Weiss, K and Bazak, L and Feldman, H Baris and Maya, I},
+  journal={European journal of medical genetics},
+  pages={103689},
+  year={2019},
+  publisher={Elsevier}
+}
+@article{sanchez2019machine,
+  title={A Machine Learning Approach for Studying the Comorbidities of Complex Diagnoses},
+  author={S{\'a}nchez-Rico, Marina and Alvarado, Jes{\'u}s M},
+  journal={Behavioral Sciences},
+  volume={9},
+  number={12},
+  pages={122},
+  year={2019},
+  publisher={Multidisciplinary Digital Publishing Institute}
+}
+@article{shen2019rare,
+  title={Rare disease knowledge enrichment through a data-driven approach},
+  author={Shen, Feichen and Zhao, Yiqing and Wang, Liwei and Mojarad, Majid Rastegar and Wang, Yanshan and Liu, Sijia and Liu, Hongfang},
+  journal={BMC medical informatics and decision making},
+  volume={19},
+  number={1},
+  pages={32},
+  year={2019},
+  publisher={Springer}
+}
+﻿@article{SHEN2019103246,
+title = "HPO2Vec+: Leveraging heterogeneous knowledge resources to enrich node embeddings for the Human Phenotype Ontology",
+journal = "Journal of Biomedical Informatics",
+volume = "96",
+pages = "103246",
+year = "2019",
+issn = "1532-0464",
+doi = "https://doi.org/10.1016/j.jbi.2019.103246",
+url = "http://www.sciencedirect.com/science/article/pii/S1532046419301650",
+author = "Feichen Shen and Suyuan Peng and Yadan Fan and Andrew Wen and Sijia Liu and Yanshan Wang and Liwei Wang and Hongfang Liu",
+keywords = "Enriched node embeddings, Human Phenotype Ontology, Heterogeneous knowledge resources, Phenotypic relevance detection, Deep phenotyping",
+abstract = "Background
+In precision medicine, deep phenotyping is defined as the precise and comprehensive analysis of phenotypic abnormalities, aiming to acquire a better understanding of the natural history of a disease and its genotype-phenotype associations. Detecting phenotypic relevance is an important task when translating precision medicine into clinical practice, especially for patient stratification tasks based on deep phenotyping. In our previous work, we developed node embeddings for the Human Phenotype Ontology (HPO) to assist in phenotypic relevance measurement incorporating distributed semantic representations. However, the derived HPO embeddings hold only distributed representations for IS-A relationships among nodes, hampering the ability to fully explore the graph.
+Methods
+In this study, we developed a framework, HPO2Vec+, to enrich the produced HPO embeddings with heterogeneous knowledge resources (i.e., DECIPHER, OMIM, and Orphanet) for detecting phenotypic relevance. Specifically, we parsed disease-phenotype associations contained in these three resources to enrich non-inheritance relationships among phenotypic nodes in the HPO. To generate node embeddings for the HPO, node2vec was applied to perform node sampling on the enriched HPO graphs based on random walk followed by feature learning over the sampled nodes to generate enriched node embeddings. Four HPO embeddings were generated based on different graph structures, which we hereafter label as HPOEmb-Original, HPOEmb-DECIPHER, HPOEmb-OMIM, and HPOEmb-Orphanet. We evaluated the derived embeddings quantitatively through an HPO link prediction task with four edge embeddings operations and six machine learning algorithms. The resulting best embeddings were then evaluated for patient stratification of 10 rare diseases using electronic health records (EHR) collected at Mayo Clinic. We assessed our framework qualitatively by visualizing phenotypic clusters and conducting a use case study on primary hyperoxaluria (PH), a rare disease, on the task of inferring relevant phenotypes given 22 annotated PH related phenotypes.
+Results
+The quantitative link prediction task shows that HPOEmb-Orphanet achieved an optimal AUROC of 0.92 and an average precision of 0.94. In addition, HPOEmb-Orphanet achieved an optimal F1 score of 0.86. The quantitative patient similarity measurement task indicates that HPOEmb-Orphanet achieved the highest average detection rate for similar patients over 10 rare diseases and performed better than other similarity measures implemented by an existing tool, HPOSim, especially for pairwise patients with fewer shared common phenotypes. The qualitative evaluation shows that the enriched HPO embeddings are generally able to detect relationships among nodes with fine granularity and HPOEmb-Orphanet is particularly good at associating phenotypes across different disease systems. For the use case of detecting relevant phenotypic characterizations for given PH related phenotypes, HPOEmb-Orphanet outperformed the other three HPO embeddings by achieving the highest average P@5 of 0.81 and the highest P@10 of 0.79. Compared to seven conventional similarity measurements provided by HPOSim, HPOEmb-Orphanet is able to detect more relevant phenotypic pairs, especially for pairs not in inheritance relationships.
+Conclusion
+We drew the following conclusions based on the evaluation results. First, with additional non-inheritance edges, enriched HPO embeddings can detect more associations between fine granularity phenotypic nodes regardless of their topological structures in the HPO graph. Second, HPOEmb-Orphanet not only can achieve the optimal performance through link prediction and patient stratification based on phenotypic similarity, but is also able to detect relevant phenotypes closer to domain expert’s judgments than other embeddings and conventional similarity measurements. Third, incorporating heterogeneous knowledge resources do not necessarily result in better performance for detecting relevant phenotypes. From a clinical perspective, in our use case study, clinical-oriented knowledge resources (e.g., Orphanet) can achieve better performance in detecting relevant phenotypic characterizations compared to biomedical-oriented knowledge resources (e.g., DECIPHER and OMIM)."
+}@article{son2018deep,
+  title={Deep phenotyping on electronic health records facilitates genetic diagnosis by clinical exomes},
+  author={Son, Jung Hoon and Xie, Gangcai and Yuan, Chi and Ena, Lyudmila and Li, Ziran and Goldstein, Andrew and Huang, Lulin and Wang, Liwei and Shen, Feichen and Liu, Hongfang and others},
+  journal={The American Journal of Human Genetics},
+  volume={103},
+  number={1},
+  pages={58--73},
+  year={2018},
+  publisher={Elsevier}
+}
+@article{mcinnes2018umap,
+  title={Umap: Uniform manifold approximation and projection for dimension reduction},
+  author={McInnes, Leland and Healy, John and Melville, James},
+  journal={arXiv preprint arXiv:1802.03426},
+  year={2018}
+}
+@article{wang2020unsupervised,
+  title={Unsupervised machine learning for the discovery of latent disease clusters and patient subgroups using electronic health records},
+  author={Wang, Yanshan and Zhao, Yiqing and Therneau, Terry M and Atkinson, Elizabeth J and Tafti, Ahmad P and Zhang, Nan and Amin, Shreyasee and Limper, Andrew H and Khosla, Sundeep and Liu, Hongfang},
+  journal={Journal of Biomedical Informatics},
+  volume={102},
+  pages={103364},
+  year={2020},
+  publisher={Elsevier}
+}
+@article{xue2019predicting,
+  title={Predicting disease-related phenotypes using an integrated phenotype similarity measurement based on HPO},
+  author={Xue, Hansheng and Peng, Jiajie and Shang, Xuequn},
+  journal={BMC systems biology},
+  volume={13},
+  number={2},
+  pages={34},
+  year={2019},
+  publisher={BioMed Central}
+}

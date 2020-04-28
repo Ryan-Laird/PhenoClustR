@@ -35,8 +35,8 @@ iterate_umap <- function(dat, dat.labels, params) {
 
     df %>%
 
-        mutate(layout = purrr::map(umap_obj, function(.) {as.data.frame(.$layout)}),
+        dplyr::mutate(layout = purrr::map(umap_obj, function(.) {as.data.frame(.$layout)}),
                data = purrr::map(layout, function(.) {cbind(., dat.labels)})) %>%
 
-        mutate(umap_plot = purrr::map2(umap_obj, data, plot_umap_bulk))
+        dplyr::mutate(umap_plot = purrr::map2(umap_obj, data, plot_umap_bulk))
 }

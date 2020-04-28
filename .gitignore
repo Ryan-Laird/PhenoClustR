@@ -3,8 +3,11 @@
 .RData
 .Ruserdata
 .venv/
+.envs/
 internal_data/
 notebooks/
 renv/library/
 renv/python/
 renv/staging/
+poster/NHGRI_Full_white.png
+poster/NHGRI_Mantra_White.png

@@ -1,0 +1,171 @@
+---
+title: "Discovering Novel Patterns of Autoinflammation via Phenotype-First Unsupervised Machine Learning"
+author:
+  - name: Ryan S. Laird
+    affil: 1
+  - name: Amanda K. Ombrello
+    affil: 1
+  - name: Patrycja Hoffmann
+    affil: 1
+  - name: Daniel L. Kastner
+    affil: 1
+affiliation: 
+  - num: 1
+    address: National Human Genome Research Institute, Bethesda MD
+poster_height: "36in"
+poster_width: "48in"
+title_textsize: "80pt"
+body_textsize: "38pt"
+sectitle_textsize: "54pt"
+caption_textsize: "80pt"
+primary_colour: "#3F5B66"
+accent_colour: "#9FC2B2"
+bibliography: bibliography.bib
+csl: american-medical-association.csl
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+logoleft_name: NHGRI_Full_white.png
+logoright_name: NHGRI_Mantra_White.png
+output:
+  posterdown::posterdown_html
+---
+
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE, include = FALSE, out.width = "100%")
+```
+
+
+```{r}
+library(magrittr)
+library(ggplot2)
+library(tibble)
+library(kableExtra)
+library(patchwork)
+library(patchwork)
+
+suppressPackageStartupMessages(library(here)) # hide full path
+
+theme_set(theme_minimal())
+
+devtools::load_all()
+
+
+load(here("internal_data", "dada2_session.bz2"))
+```
+
+# Introduction
+ 
+In recent years the integration of large-scale biomedical knowledge sources and machine learning has accelerated patient stratification in rare disease. However, such projects often focus on known diseases within large and phenotypically diverse cohorts.
+
+Our research team studies a subset of rare diseases characterized by dysregulation of the innate immune system, termed *autoinflammation*. Many of these disorders have highly overlapping phenotypic profiles, which often clouds downstream analysis and diagnosis.
+
+In order to better understand clinical variation within our cohort, we leverage the Human Phenotype Ontology (HPO) to guide two unsupervised machine learning pathways. As a proof-of-concept we attempt to cluster a subset of 54 patients in our cohort with Deficiency of Adenosine Deaminase 2 (DADA2), a disease known to be clinically heterogeneous. 
+
+
+**General HPO Structure**
+
+```{r, include=TRUE, fig.cap="The HPO provides a structured vocabulary of phenotypic abnormalities encountered in human disease, and has become the *de facto* standard for studying the complex relationship between genetic variants and clinical presentation.  . https://hpo.jax.org/app/tools/loinc2hpo", out.width="100%"}
+knitr::include_graphics(here("figures", "hpo_example.png"))
+```
+
+
+
+# Methods
+
+**Data Generation & Preprocessing**
+
+Source code for analysis will be hosted on [GitHub](https://github.com/Ryan-Laird/PhenoClustR).
+
+```{r, include=TRUE, out.width="100%", fig.cap='A BTRIS query was used to gather all clinical notes for 54 DADA2 patients on our protocol. A natural language processing tool, ClinPhen, was used to extract HPO term occurance from the corpus. To avoid redundancy, R package `ontologySimilarity` was applied to generate a minimal term set per patient.'}
+knitr::include_graphics(here("figures", "data_generation.png"))
+```
+
+
+**Clustering Approaches**
+
+Each patient was treated as a binary vector of their minimal term set (e.g. Arthritis: 0, Ischemic Stroke: 1, ...).
+
+```{r}
+clust_tbl <- 
+  tibble("Approach" = c("Ontology Similarity", "HPO2Vec"),
+             `Patient Similarity Metric` = c("Lin", "Average Term  Embedding"),
+             `Clustering Method` = c("Leiden", "PCA, UMAP, HDBSCAN"),
+             "Pros" = c("Easier to interpret, rewards granular data", "Closer to expert opinion"),
+             "Cons" = c("No connections between organ systems", "Not directly interpretable"))
+```
+
+
+```{r, include=TRUE}
+kable(clust_tbl, align = "c", caption = "Comparison of Patient Clustering Approaches") %>% 
+  kable_styling("striped", full_width = TRUE, position = "center")
+```
+
+## HPO2Vec
+
+To enrich the HPO with cross organ system associations, a new edge was drawn between any two phenotypes if they shared a common Orphanet disease annotation. 
+
+```{r, include=TRUE, fig.cap="An example Node2Vec embedding that depicts node homophily. https://snap.stanford.edu/node2vec"}
+knitr::include_graphics(here::here("figures", "node2vec_example.png"))
+```
+
+
+
+# Results
+
+**Patient Clusters**
+```{r}
+cluster_plot <- plot_median + plot_emb
+
+ggsave(plot = cluster_plot, filename = here::here("figures", "onto_emb_cluster.png"))
+```
+
+
+```{r, include=TRUE, fig.cap="Leiden clustering by ontology similarity; HDBSCAN Clustering by Average HPO2Vec Embedding Space."}
+knitr::include_graphics(here::here("figures", "onto_emb_cluster.png"))
+```
+
+
+-----------------------------------------------------
+
+**Cluster Interpretation**
+
+```{r}
+
+text_tbl <- tibble(
+ 
+   Clusters = c(1,2,3,1,2,3),
+  
+  "Frequent Terms" = c("Stroke, Arthritis", 
+                       "Abdominal Pain, Neutropenia",
+                       "Red Cell Aplasia, Vasculitis",
+                       "Stroke, Arthritis", 
+                       "Abdominal Pain, Neutropenia",
+                       "Red Cell Aplasia, Vasculitis"),
+  
+  "Qualitative Category" = c("inflam", "marrow", "other", "inflam", "marrow", "other")
+)
+
+
+
+```
+
+```{r, include=TRUE}
+kable(text_tbl, align = "c", caption = "Phenotypic Comparison of Patient Clusters") %>% 
+  kable_styling("striped", full_width = TRUE, position = "center") %>% 
+  pack_rows("Onto Sim", 1,3) %>% 
+  pack_rows("HPO2Vec", 4,6)
+```
+
+
+# Discussion
+
+As with any unsupervised method, perhaps the most difficult step is interpretation. Future work includes a deeper dive into the clinical nature of each respective cluster, and a more robust comparison of direct ontology similarity vs HPO term embedding. 
+
+If patient clusters are clinically relevant, we hope to apply these methods to better stratify undifferentiated patients that make up ~60% of our cohort. 
+
+
+```{r, eval=FALSE}
+pagedown::chrome_print(here::here("poster", "poster.Rmd"))
+```
+

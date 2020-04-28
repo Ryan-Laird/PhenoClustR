@@ -8,47 +8,54 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+  fig.path = "figures/",
+  out.width = "100%",
+  include = FALSE
 )
 ```
 
 # PhenoClustR
 
 <!-- badges: start -->
+[![lifecycle-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)
 <!-- badges: end -->
 
-The goal of PhenoClustR is to ...
+```{r, include=TRUE, fig.cap="Leiden clustering by ontology similarity; HDBSCAN Clustering by Average HPO2Vec Embedding Space.", echo=FALSE}
+knitr::include_graphics(here::here("figures", "onto_emb_cluster.png"))
+```
 
 ## Installation
 
-You can install the released version of PhenoClustR from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("PhenoClustR")
+Although this is largely an exploratory project rather than an actual package, one may install the development version of PhenoClustR from this repository:
+```{r, eval=FALSE, include=TRUE}
+devtools::install_github("Ryan-Laird/PhenoClustR")
 ```
 
-## Example
+*Disclaimer:* This is for research purposes only and does not claim to aid diagnostics or medical decision making. If you are working with sensitive data take precaution to protect PII/PHI. Please refer to the [Code of Conduct](CODE_OF_CONDUCT.md) for user/community standards.
 
-This is a basic example which shows you how to solve a common problem:
 
-```{r example}
-library(PhenoClustR)
-## basic example code
-```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+-------------------------------------------------------------------
 
-```{r cars}
-summary(cars)
-```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
+## Introduction
 
-You can also embed plots, for example:
+This is an experimental package I've developed in an attempt to better stratify a cohort of patients with undifferentiated autoinflammatory disease. It leans heavily on the [Human Phenotype Ontology](https://hpo.jax.org/app/), [`ontologyX`](https://cran.r-project.org/web/packages/ontologyIndex/vignettes/intro-to-ontologyX.html) R package suite, and [HPO2Vec](https://github.com/shenfc/HPO2Vec) (and therefore [Node2Vec](https://github.com/aditya-grover/node2vec)).
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+Please see [references](references/) for related research. 
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+The initial findings of this work are to be presented during [NIH Postbac poster day 2020](https://www.training.nih.gov/postbac_poster_day). My poster is available in [this repository](poster/poster.html), and was generated with the wonderful R package [`posterdown`](https://github.com/brentthorne/posterdown). 
+
+-------------------------------------------------
+
+## Coming Soon
+
+For the most part this will remain an exploratory project, however I do plan on including additional functionality and resources.
+
+To do's include:
+
+- Create synthetic autoinflammatory phenotype data for reproducible examples
+
+- Provide script for my initial analysis (poster)
+
+- Provide script for generating an enriched HPO node embedding
