@@ -11,7 +11,7 @@
 Unsupervised machine learning approaches for patient
 stratification/clustering by phenotype.
 
-<img src="C:/Users/lairdrs/Documents/PhenoClustR/figures/onto_emb_cluster.png" width="100%" />
+![Example Clusters](figures/onto_emb_cluster.png)
 
 ## Installation
 
@@ -42,9 +42,9 @@ Please see [references](references/) for related research.
 
 The initial findings of this work are to be presented during [NIH
 Postbac poster
-day, 2020](https://www.training.nih.gov/postbac_poster_day). My poster
-is available in [this repository](poster/poster.pdf), and was generated
-with the wonderful R package
+day, 2020](https://www.training.nih.gov/postbac_poster_day). My
+[poster](poster/poster.pdf) is available in this repository and was
+generated with the wonderful R package
 [`posterdown`](https://github.com/brentthorne/posterdown).
 
 ## Coming Soon

@@ -21,11 +21,7 @@ knitr::opts_chunk$set(
 
 Unsupervised machine learning approaches for patient stratification/clustering by phenotype. 
 
-```{r, include=TRUE, echo=FALSE}
-
-knitr::include_graphics(here::here("figures", "onto_emb_cluster.png"))
-
-```
+![Example Clusters](figures/onto_emb_cluster.png)
 
 ## Installation
 
@@ -43,7 +39,7 @@ This is an experimental package I've developed in an attempt to better stratify 
 
 Please see [references](references/) for related research. 
 
-The initial findings of this work are to be presented during [NIH Postbac poster day, 2020](https://www.training.nih.gov/postbac_poster_day). My poster is available in [this repository](poster/poster.pdf), and was generated with the wonderful R package [`posterdown`](https://github.com/brentthorne/posterdown). 
+The initial findings of this work are to be presented during [NIH Postbac poster day, 2020](https://www.training.nih.gov/postbac_poster_day). My [poster](poster/poster.pdf) is available in this repository and was generated with the wonderful R package [`posterdown`](https://github.com/brentthorne/posterdown). 
 
 
 ## Coming Soon
